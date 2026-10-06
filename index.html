@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una sorpresa para ti 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f6, #f9d5ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: #6b2147;
+}
+
+.container {
+  width: 92%;
+  max-width: 500px;
+  text-align: center;
+  padding: 35px 22px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 30px;
+  box-shadow: 0 10px 35px rgba(120,40,80,0.18);
+  backdrop-filter: blur(8px);
+}
+
+.heart {
+  font-size: 55px;
+  animation: latido 1.4s infinite;
+}
+
+h1 {
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+.message {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  padding: 15px 28px;
+  border-radius: 30px;
+  background: #e85d91;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(180,50,100,0.25);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.video {
+  display: none;
+  margin-top: 25px;
+}
+
+video {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.final {
+  margin-top: 25px;
+  font-size: 20px;
+  display: none;
+}
+
+.heart-float {
+  position: fixed;
+  font-size: 25px;
+  animation: subir 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes latido {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes subir {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart-float" style="left:10%; animation-delay:1s;">💗</div>
+<div class="heart-float" style="left:30%; animation-delay:3s;">💕</div>
+<div class="heart-float" style="left:55%; animation-delay:0s;">💖</div>
+<div class="heart-float" style="left:80%; animation-delay:2s;">💗</div>
+
+<div class="container">
+
+  <div class="heart">💗</div>
+
+  <h1>Feliz cumpleaños</h1>
+
+  <h2>Hay una pequeña sorpresa para ti...</h2>
+
+  <p class="message">
+    Preparé esto con mucho cariño especialmente para ti.
+    Espero que este nuevo año de vida esté lleno de momentos
+    hermosos, sueños cumplidos y muchas razones para sonreír. 💕
+  </p>
+
+  <button onclick="mostrarVideo()">
+    💌 Abrir mi sorpresa
+  </button>
+
+  <div class="video" id="video">
+    <video controls playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+  </div>
+
+  <p class="final" id="final">
+    💗 Te quiero muchísimo. Feliz cumpleaños 💗
+  </p>
+
+</div>
+
+<script>
+function mostrarVideo() {
+  document.getElementById("video").style.display = "block";
+  document.getElementById("final").style.display = "block";
+
+  document.querySelector("button").style.display = "none";
+
+  document.getElementById("video").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
